@@ -80,8 +80,11 @@ export default function Movies() {
     <React.Fragment>
       <Box>
         <Box paddingY={3}>
-          <Typography variant='h5' sx={{ mb: 2 }}>
-            What to watch
+          <Typography
+            variant='h6'
+            sx={{ mb: 2, width: '100%', textAlign: 'center' }}
+          >
+            Explore Movies
           </Typography>
           <Box display='flex' flexWrap='wrap'>
             {genreChips}
