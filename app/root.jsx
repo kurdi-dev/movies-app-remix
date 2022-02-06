@@ -14,6 +14,27 @@ import theme from './src/shared/theme';
 import ClientStyleContext from './src/components/ClientStyleContext';
 import Layout from './src/layout/Main';
 
+// Import Swiper styles
+import swiperBundle from 'swiper/swiper-bundle.min.css';
+import swiperCss from 'swiper/swiper.min.css';
+import myCss from './src/styles/global.css';
+export function links() {
+  return [
+    {
+      rel: 'stylesheet',
+      href: swiperBundle,
+    },
+    {
+      rel: 'stylesheet',
+      href: swiperCss,
+    },
+    {
+      rel: 'stylesheet',
+      href: myCss,
+    },
+  ];
+}
+
 const Document = withEmotionCache(({ children, title }, emotionCache) => {
   const clientStyleData = React.useContext(ClientStyleContext);
 
