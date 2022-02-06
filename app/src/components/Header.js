@@ -11,12 +11,11 @@ import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
 import MovieCreationOutlinedIcon from '@mui/icons-material/MovieCreationOutlined';
 import LiveTvOutlinedIcon from '@mui/icons-material/LiveTvOutlined';
 import Menu from '@mui/material/Menu';
-import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
-import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 
 import SearchIcon from '@mui/icons-material/Search';
+import { Link } from 'remix';
 
 const links = [
   {
@@ -68,7 +67,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
     // vertical padding + font size from searchIcon
     paddingLeft: `calc(1em + ${theme.spacing(4)})`,
     transition: theme.transitions.create('width'),
-    width: '100%',
+    width: '10ch',
     [theme.breakpoints.up('sm')]: {
       width: '12ch',
       '&:focus': {
@@ -136,7 +135,16 @@ export default function Header() {
             >
               {links.map((link) => (
                 <MenuItem key={link.href} onClick={handleCloseNavMenu}>
-                  <Typography textAlign='center'>{link.label}</Typography>
+                  <Link to={link.href}>
+                    <Typography
+                      textAlign='center'
+                      sx={{
+                        color: 'text.primary',
+                      }}
+                    >
+                      {link.label}
+                    </Typography>
+                  </Link>
                 </MenuItem>
               ))}
             </Menu>
@@ -159,13 +167,20 @@ export default function Header() {
             }}
           >
             {links.map((link) => (
-              <Button
-                key={link.href}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'block' }}
-              >
-                {link.label}
-              </Button>
+              <Link to={link.href} key={link.href}>
+                <Button
+                  onClick={handleCloseNavMenu}
+                  sx={{
+                    my: 2,
+                    color: 'text.primary',
+                    display: 'block',
+                    px: 4,
+                    ':hover': { color: 'primary.main' },
+                  }}
+                >
+                  {link.label}
+                </Button>
+              </Link>
             ))}
           </Box>
           <Box sx={{ flexGrow: 0 }}>
