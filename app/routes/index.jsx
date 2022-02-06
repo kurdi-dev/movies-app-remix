@@ -35,72 +35,72 @@ export default function Index() {
   }
   return (
     <React.Fragment>
-      <MoviesSlider moviesData={data['Trending'].results} />
+      <MoviesSlider moviesData={data['Trending']} />
       <MoviesRow
         title='From Netflix'
-        moviesData={data.TvsNetflix.results}
+        moviesData={data.TvsNetflix}
         type='netflix'
         showMovieInfoDrawer={handleShowInfo}
       />
       <MoviesRow
         title='Action Movies'
-        moviesData={data.Action.results}
+        moviesData={data.Action}
         genre='movies'
         type='movies'
         showMovieInfoDrawer={handleShowInfo}
       />
       <MoviesRow
         title='Adventure Movies'
-        moviesData={data.Adventure.results}
+        moviesData={data.Adventure}
         genre='adventure'
         type='movies'
         showMovieInfoDrawer={handleShowInfo}
       />
       <MoviesRow
         title='Science Fiction Movies'
-        moviesData={data.ScienceFiction.results}
+        moviesData={data.ScienceFiction}
         genre='science_fiction'
         type='movies'
         showMovieInfoDrawer={handleShowInfo}
       />
       <MoviesRow
         title='Comedy Movies'
-        moviesData={data.Comedy.results}
+        moviesData={data.Comedy}
         genre='comedy'
         type='movies'
         showMovieInfoDrawer={handleShowInfo}
       />
       <MoviesRow
         title='Fantasy Movies'
-        moviesData={data.Fantasy.results}
+        moviesData={data.Fantasy}
         genre='fantasy'
         type='movies'
         showMovieInfoDrawer={handleShowInfo}
       />
       <MoviesRow
         title='Horror Movies'
-        moviesData={data.Fantasy.results}
+        moviesData={data.Fantasy}
         genre='horror'
         type='movies'
         showMovieInfoDrawer={handleShowInfo}
       />
       <MoviesRow
         title='Thriller Movies'
-        moviesData={data.Thriller.results}
+        moviesData={data.Thriller}
         genre='thriller'
         type='movies'
         showMovieInfoDrawer={handleShowInfo}
       />
       <MoviesRow
         title='Animation Movies'
-        moviesData={data.Animation.results}
+        moviesData={data.Animation}
         genre='animation'
         type='movies'
         showMovieInfoDrawer={handleShowInfo}
       />
       <MoviesRow
         title='Family Movies'
-        moviesData={data.Family.results}
+        moviesData={data.Family}
         genre='family'
         type='movies'
         showMovieInfoDrawer={handleShowInfo}

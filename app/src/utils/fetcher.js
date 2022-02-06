@@ -10,7 +10,7 @@ export async function getAllData() {
       .get(`${baseURL}${url}`)
       .then((res) => {
         if (res.status === 200) {
-          allShows[title] = res.data;
+          allShows[title] = res.data.results;
         } else {
           console.log('There is somthing wrong with the TMDB API get request');
         }
