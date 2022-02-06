@@ -2,6 +2,8 @@ import * as React from 'react';
 import { Link, useLoaderData } from 'remix';
 import Typography from '@mui/material/Typography';
 import { getAllData } from '../src/utils/fetcher';
+import MoviesSlider from '../src/components/MoviesSlider';
+import MoviesRow from '../src/components/MoviesRow';
 
 export const loader = async () => {
   return getAllData();
@@ -18,28 +20,21 @@ export const meta = () => {
 // https://remix.run/guides/routing#index-routes
 export default function Index() {
   const data = useLoaderData();
-  console.log(data);
+  const handleShowInfo = (movieData) => {
+    setMovieInfoData(movieData);
+    setShowInfo(true);
+  };
   return (
     <React.Fragment>
-      <Typography variant='h4' component='h1' gutterBottom>
-        Hello World!
-      </Typography>
-      <ul>
-        <li>
-          <Link to='/'>Home</Link>
-        </li>
-        <li>
-          <Link to='/movies'>Movies</Link>
-        </li>
-        <li>
-          <Link to='/tv'>TV Series</Link>
-        </li>
-        <li>
-          <a target='_blank' href='https://remix.run/docs' rel='noreferrer'>
-            Remix Docs
-          </a>
-        </li>
-      </ul>
+      {data && <MoviesSlider moviesData={data['Trending'].results} />}
+      {data && (
+        <MoviesRow
+          title='From Netflix'
+          moviesData={data.TvsNetflix.results}
+          type='netflix'
+          showMovieInfoDrawer={handleShowInfo}
+        />
+      )}
     </React.Fragment>
   );
 }
