@@ -1,4 +1,5 @@
 import { Typography, Button, Divider, Box } from '@mui/material';
+import { useNavigate } from 'remix';
 
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 
@@ -18,16 +19,13 @@ export default function MoviesRow({
   showMovieInfoDrawer,
   similar,
 }) {
+  const navigate = useNavigate();
+
   const seeAllClickHandle = () => {
     if (type == 'netflix') {
-      console.log({
-        pathname: `/tv`,
-      });
+      navigate('/tv');
     } else {
-      console.log({
-        pathname: `/${type}`,
-        query: { genre: `${genre}` },
-      });
+      navigate(`/${type}?genre=${genre}`);
     }
   };
 
@@ -73,7 +71,7 @@ export default function MoviesRow({
 
   return (
     <Box sx={{ backgroundColor: '#121212' }}>
-      <Box display='flex' justifyContent='space-between'>
+      <Box display='flex' justifyContent='space-between' mb={1}>
         <Typography
           sx={{ fontSize: 18, color: 'text.primary' }}
           variant='body1'
