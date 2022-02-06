@@ -1,10 +1,4 @@
-import {
-  Typography,
-  LinearProgress,
-  Button,
-  Divider,
-  Box,
-} from '@mui/material';
+import { Typography, Button, Divider, Box } from '@mui/material';
 
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 
@@ -106,7 +100,7 @@ export default function MoviesRow({
         sx={{
           width: '100%',
           minHeight: 320,
-          py: 2,
+          pb: 2,
           overflow: 'hidden',
         }}
       >
@@ -119,7 +113,7 @@ export default function MoviesRow({
           {swiperItems}
         </Swiper>
       </Box>
-      <Divider variant='fullWidth' light />
+      <Divider variant='fullWidth' sx={{ mb: 2 }} light />
     </Box>
   );
 }

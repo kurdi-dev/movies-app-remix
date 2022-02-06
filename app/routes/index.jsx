@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { Link, useLoaderData } from 'remix';
-import Typography from '@mui/material/Typography';
+import { useLoaderData } from 'remix';
 import { getAllData } from '../src/utils/fetcher';
 import MoviesSlider from '../src/components/MoviesSlider';
 import MoviesRow from '../src/components/MoviesRow';
@@ -41,6 +40,69 @@ export default function Index() {
         title='From Netflix'
         moviesData={data.TvsNetflix.results}
         type='netflix'
+        showMovieInfoDrawer={handleShowInfo}
+      />
+      <MoviesRow
+        title='Action Movies'
+        moviesData={data.Action.results}
+        genre='movies'
+        type='movies'
+        showMovieInfoDrawer={handleShowInfo}
+      />
+      <MoviesRow
+        title='Adventure Movies'
+        moviesData={data.Adventure.results}
+        genre='adventure'
+        type='movies'
+        showMovieInfoDrawer={handleShowInfo}
+      />
+      <MoviesRow
+        title='Science Fiction Movies'
+        moviesData={data.ScienceFiction.results}
+        genre='science_fiction'
+        type='movies'
+        showMovieInfoDrawer={handleShowInfo}
+      />
+      <MoviesRow
+        title='Comedy Movies'
+        moviesData={data.Comedy.results}
+        genre='comedy'
+        type='movies'
+        showMovieInfoDrawer={handleShowInfo}
+      />
+      <MoviesRow
+        title='Fantasy Movies'
+        moviesData={data.Fantasy.results}
+        genre='fantasy'
+        type='movies'
+        showMovieInfoDrawer={handleShowInfo}
+      />
+      <MoviesRow
+        title='Horror Movies'
+        moviesData={data.Fantasy.results}
+        genre='horror'
+        type='movies'
+        showMovieInfoDrawer={handleShowInfo}
+      />
+      <MoviesRow
+        title='Thriller Movies'
+        moviesData={data.Thriller.results}
+        genre='thriller'
+        type='movies'
+        showMovieInfoDrawer={handleShowInfo}
+      />
+      <MoviesRow
+        title='Animation Movies'
+        moviesData={data.Animation.results}
+        genre='animation'
+        type='movies'
+        showMovieInfoDrawer={handleShowInfo}
+      />
+      <MoviesRow
+        title='Family Movies'
+        moviesData={data.Family.results}
+        genre='family'
+        type='movies'
         showMovieInfoDrawer={handleShowInfo}
       />
       <MovieDetailDrawer
