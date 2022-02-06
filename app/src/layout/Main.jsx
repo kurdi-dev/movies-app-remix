@@ -1,17 +1,17 @@
 import * as React from 'react';
 import Container from '@mui/material/Container';
 import Box from '@mui/material/Box';
-import Copyright from '../components/Copyright';
+import Footer from '../components/Footer';
 import Header from '../components/Header';
 
 export default function Layout({ children }) {
   return (
     <React.Fragment>
       <Header />
-      <Container maxWidth='lg'>
-        <Box sx={{ my: 4 }}>
+      <Container maxWidth='xl'>
+        <Box sx={{ my: 2 }}>
           {children}
-          <Copyright />
+          <Footer />
         </Box>
       </Container>
     </React.Fragment>
