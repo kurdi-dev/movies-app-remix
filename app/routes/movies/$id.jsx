@@ -32,7 +32,6 @@ export default function moviePage() {
     setShowInfo(false);
     setMovieInfoData(null);
   };
-  console.log(movieData);
   return (
     <React.Fragment>
       <HeroImage image={movieData.backdrop_path} />

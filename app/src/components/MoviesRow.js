@@ -20,9 +20,6 @@ export default function MoviesRow({
   similar,
 }) {
   const navigate = useNavigate();
-
-  console.log('movie data is: ', moviesData);
-
   const seeAllClickHandle = () => {
     if (type == 'netflix') {
       navigate('/tv');

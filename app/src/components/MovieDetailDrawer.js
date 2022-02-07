@@ -15,7 +15,6 @@ import CloseIcon from '@mui/icons-material/Close';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 export default function MovieDetailDrawer({ movieData, show, handeCloseInfo }) {
   const genreChips = [];
-  console.log('movie data: ', movieData);
   movieData != null &&
     movieData?.genre_ids.forEach((id) =>
       genreChips.push(
