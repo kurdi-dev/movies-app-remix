@@ -89,5 +89,14 @@ export async function getAllTv(genre, page) {
 }
 export async function getSingleTv(tv_id) {
   let fetchUrl = `${baseURL}/tv/${tv_id}?api_key=${API_KEY}&language=en-US&append_to_response=videos,keywords,similar,credits`;
-  return getFromAPI(fetchUrl, true);
+  const tvData = await getFromAPI(fetchUrl, true);
+  console.log('# seasons: ', tvData.number_of_seasons);
+  const seasons = [];
+  for (let i = 1; i <= tvData.number_of_seasons; i++) {
+    let seasonFetchUrl = `${baseURL}/tv/${tv_id}/season/${i}?api_key=${API_KEY}&language=en-US`;
+    let seasonData = await getFromAPI(seasonFetchUrl, true);
+    seasons.push(seasonData);
+  }
+
+  return { tvData, seasons };
 }
