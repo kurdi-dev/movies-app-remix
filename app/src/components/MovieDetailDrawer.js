@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import {
   Button,
   Drawer,
@@ -12,11 +12,8 @@ import {
 import { Link } from 'remix';
 import genres from '../shared/genres';
 import CloseIcon from '@mui/icons-material/Close';
-import DetailsIcon from '@mui/icons-material/Details';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 export default function MovieDetailDrawer({ movieData, show, handeCloseInfo }) {
-  const [showInfoDrawer, setShowInfoDrawer] = useState(false);
-  const classes = '';
   const genreChips = [];
   console.log('movie data: ', movieData);
   movieData != null &&

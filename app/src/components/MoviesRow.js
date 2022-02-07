@@ -21,6 +21,8 @@ export default function MoviesRow({
 }) {
   const navigate = useNavigate();
 
+  console.log('movie data is: ', moviesData);
+
   const seeAllClickHandle = () => {
     if (type == 'netflix') {
       navigate('/tv');
@@ -29,53 +31,51 @@ export default function MoviesRow({
     }
   };
 
-  const swiperItems = moviesData
-    ? moviesData.map((movie) => (
-        <SwiperSlide
-          key={movie.id}
-          style={{
-            maxWidth: 180,
-          }}
-          onClick={() => showMovieInfoDrawer(movie)}
-        >
-          <Box
-            sx={{
-              transition: 'transform 450ms',
-              ':hover': {
-                transform: 'scale(1.07)',
-                opacity: 1,
-              },
-              display: 'flex',
-              flexDirection: 'column',
-              pb: 1,
-            }}
-          >
-            <img
-              src={image_base_url + movie.poster_path}
-              alt={movie.title}
-              sx={{ objectFit: 'contain', width: '100%' }}
-              className={'swiper-lazy'}
-            />
+  const swiperItems = moviesData.map((movie) => (
+    <SwiperSlide
+      key={movie.id}
+      style={{
+        maxWidth: 180,
+      }}
+      onClick={() => showMovieInfoDrawer(movie)}
+    >
+      <Box
+        sx={{
+          transition: 'transform 450ms',
+          ':hover': {
+            transform: 'scale(1.07)',
+            opacity: 1,
+          },
+          display: 'flex',
+          flexDirection: 'column',
+          pb: 1,
+        }}
+      >
+        <img
+          src={image_base_url + movie.poster_path}
+          alt={movie.title}
+          sx={{ objectFit: 'contain', width: '100%' }}
+          className={'swiper-lazy'}
+        />
 
-            <Typography
-              sx={{ textAlign: 'center', color: 'text.primary', mt: 1 }}
-              variant='subtitle2'
-              color='initial'
-            >
-              {movie?.title || movie?.name || movie?.original_name}
-            </Typography>
-          </Box>
-        </SwiperSlide>
-      ))
-    : null;
+        <Typography
+          sx={{ textAlign: 'center', color: 'text.primary', mt: 1 }}
+          variant='subtitle2'
+          color='initial'
+        >
+          {movie?.title || movie?.name || movie?.original_name}
+        </Typography>
+      </Box>
+    </SwiperSlide>
+  ));
 
   return (
     <Box sx={{ backgroundColor: '#121212' }}>
       <Box display='flex' justifyContent='space-between' mb={1}>
         <Typography
-          sx={{ fontSize: 18, color: 'text.primary' }}
-          variant='body1'
-          color='initial'
+          sx={{ fontSize: 18 }}
+          variant='button'
+          color='primary'
           display='inline'
           component='h2'
         >
