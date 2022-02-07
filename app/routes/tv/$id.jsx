@@ -22,7 +22,6 @@ export const loader = async ({ params }) => {
 };
 export default function tvPage() {
   const { tvData, seasons } = useLoaderData();
-  console.log('Seasons: ', seasons);
   const [showInfo, setShowInfo] = useState(false);
   const [movieInfoData, setMovieInfoData] = useState(null);
 
