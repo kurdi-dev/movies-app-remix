@@ -30,6 +30,8 @@ To run your Remix app locally, make sure your project's local dependencies are i
 yarn install
 ```
 
+Then, add your [TMDB](https://www.themoviedb.org/) API key to your `.env` file, see `.env.example` file for your reference.
+
 Afterwards, start the Remix development server like so:
 
 ```sh
