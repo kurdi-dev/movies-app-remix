@@ -2,6 +2,8 @@
 
 ## Movies app built with Remix, MUI and TMDB API.
 
+![moviex screenshoot](./public/images/movix-screenshot.png)
+
 ## Docs
 
 - [Remix Docs](https://remix.run/docs)
