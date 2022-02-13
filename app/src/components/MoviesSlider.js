@@ -22,7 +22,7 @@ export default function MoviesSlider({ moviesData }) {
           <Box
             sx={{
               objectFit: 'contain',
-              minHeight: { xs: 420, md: 450, lg: 480 },
+              minHeight: { xs: 420, sm: 450, md: 500, lg: 580 },
               backgroundSize: 'cover',
               backgroundImage: `url(${image_base_url}${movie.backdrop_path})`,
               backgroundPosition: 'center center',
